@@ -11,6 +11,9 @@ namespace ObjectLifetime
         static void Main(string[] args)
         {
             Car myCar = new Car();
+
+            Car.MyMethod();
+
             /*
             myCar.Make = "Oldsmobile";
             myCar.Model = "Cutlas Supreme";
@@ -71,6 +74,14 @@ namespace ObjectLifetime
             Model = model;
             Year = year;
             Color = color;
+        }
+
+        public static void MyMethod()
+        {
+            Console.WriteLine("Called the static MyMethod");
+            // Console.WriteLine(Make); // Won't work because is a static method
+            // Make is not static, it is instance-based.
+            // Static members vs Instance members
         }
     }
 }
